@@ -1,6 +1,6 @@
 <?php
 
-namespace BMS;
+namespace FMS;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

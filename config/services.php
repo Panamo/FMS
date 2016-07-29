@@ -34,7 +34,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => BMS\User::class,
+        'model' => FMS\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

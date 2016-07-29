@@ -1,10 +1,10 @@
 <?php
 
-namespace BMS\Http\Controllers\Auth;
+namespace FMS\Http\Controllers\Auth;
 
-use BMS\User;
+use FMS\User;
 use Validator;
-use BMS\Http\Controllers\Controller;
+use FMS\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

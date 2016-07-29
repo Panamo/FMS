@@ -1,6 +1,6 @@
 <?php
 
-namespace BMS\Providers;
+namespace FMS\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

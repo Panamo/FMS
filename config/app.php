@@ -164,10 +164,10 @@ return [
         /*
          * Application Service Providers...
          */
-        BMS\Providers\AppServiceProvider::class,
-        BMS\Providers\AuthServiceProvider::class,
-        BMS\Providers\EventServiceProvider::class,
-        BMS\Providers\RouteServiceProvider::class,
+        FMS\Providers\AppServiceProvider::class,
+        FMS\Providers\AuthServiceProvider::class,
+        FMS\Providers\EventServiceProvider::class,
+        FMS\Providers\RouteServiceProvider::class,
 
     ],
 

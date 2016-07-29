@@ -1,10 +1,10 @@
 <?php
 
-namespace BMS\Http\Controllers;
+namespace FMS\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use BMS\Http\Requests;
+use FMS\Http\Requests;
 
 class VhipController extends Controller
 {

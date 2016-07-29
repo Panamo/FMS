@@ -1,8 +1,8 @@
 <?php
 
-namespace BMS\Http\Controllers\Auth;
+namespace FMS\Http\Controllers\Auth;
 
-use BMS\Http\Controllers\Controller;
+use FMS\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

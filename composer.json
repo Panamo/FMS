@@ -22,7 +22,7 @@
             "database"
         ],
         "psr-4": {
-            "BMS\\": "app/"
+            "FMS\\": "app/"
         }
     },
     "autoload-dev": {

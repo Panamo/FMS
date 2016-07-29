@@ -1,6 +1,6 @@
 <?php
 
-namespace BMS\Providers;
+namespace FMS\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'BMS\Http\Controllers';
+    protected $namespace = 'FMS\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

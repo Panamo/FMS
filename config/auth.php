@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => BMS\User::class,
+            'model' => FMS\User::class,
         ],
 
         // 'users' => [

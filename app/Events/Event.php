@@ -1,6 +1,6 @@
 <?php
 
-namespace BMS\Events;
+namespace FMS\Events;
 
 abstract class Event
 {
