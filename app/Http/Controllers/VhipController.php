@@ -25,7 +25,7 @@ class VhipController extends Controller
      */
     public function create()
     {
-        //
+        return view("vhip");
     }
 
     /**
