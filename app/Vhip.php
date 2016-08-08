@@ -5,8 +5,8 @@ namespace FSM;
 use Jenssegers\Mongodb\Eloquent\Model as Model;
 
 /**
- * User
- * The User Model
+ * Vhip
+ * The Vhip Model
  *
  * @property integer $id
  * @property \Carbon\Carbon $created_at
