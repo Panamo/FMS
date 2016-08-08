@@ -1,3 +1,4 @@
+</div>
 <footer class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 	<div class="container">
 		<p class="navbar-text navbar-right">
