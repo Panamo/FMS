@@ -37,6 +37,15 @@
                     </ul>
                 </li>
             </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('company.index')}}">List</a></li>
+                        <li><a href="{{route('company.create')}}">New</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
