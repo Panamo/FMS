@@ -16,3 +16,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('vhip', 'VhipController');
+Route::resource('company', 'CompanyController');
