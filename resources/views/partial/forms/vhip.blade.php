@@ -1,4 +1,4 @@
-<form method="post" url="{{route('vhip.store')}}">
+{!! Form::open(['url' => route('vhip.store')]) !!}
     <div class="form-group">
         <label for="letter_code">Letter Code</label>
         <input class="form-control" type="text" id="letter_code" name="letter_code" placeholder="Letter Code">
@@ -31,4 +31,4 @@
         <input type="text" id="amount" name="amount">
         <button type="button" name="plus_button">+</button>
     </div>
-</form>
+{!! Form::close() !!}
