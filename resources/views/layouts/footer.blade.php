@@ -11,7 +11,7 @@
 {!! Html::script('js/jquery.js') !!}
 
 <!-- Bootstrap Core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+{!! Html::script('js/bootstrap.min.js') !!}
 
 <!-- Vue.js Thanks to Pooya -->
 {!! Html::script('js/vue.min.js') !!}
