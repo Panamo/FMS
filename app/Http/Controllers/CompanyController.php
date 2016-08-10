@@ -5,6 +5,7 @@ namespace FMS\Http\Controllers;
 use Illuminate\Http\Request;
 
 use FMS\Http\Requests;
+use FMS\Company;
 
 class CompanyController extends Controller
 {
@@ -15,7 +16,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        return view('company.index')->with('companies', Company::all());
     }
 
     /**
@@ -36,16 +37,28 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'type' => 'required|in:clone,register',
+            'address' => 'required',
+            'telephone' => 'required|array',
+        ]);
+
+        $company = Company::create([
+            'name' => $request['name'],
+            'type' => $request['type'],
+            'address' => $request['address'],
+            'telephone' => $request['telephone']
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Company $company)
     {
         //
     }
