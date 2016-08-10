@@ -6,8 +6,8 @@
     <div class="form-group">
       <label for="type">Type</label>
       <select name="type" id="type" class="form-control">
-          <option value="">ثبت</option>
-          <option value="">تکثیر</option>
+          <option value="register">Register</option>
+          <option value="clone">Clone</option>
       </select>
     </div>
     <div class="form-group">
