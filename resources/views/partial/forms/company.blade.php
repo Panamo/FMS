@@ -14,9 +14,13 @@
         <label for="address">Address</label>
         <textarea class="form-control" id="address" name="address" rows="4" cols="40" placeholder="Address"></textarea>
     </div>
-    <div class="form-group">
+    <div id="company-telephone-div" class="form-group">
         <label for="telphone">Telephone</label>
-        <input class="form-control" type="text" id="telephone" name="telephone">
-        <button type="button" name="button">+</button>
+        <template v-for="i in n">
+            <input class="form-control" type="text" id="telephone" name="telephone[]">
+        </template>
+        <button type="button" class="btn btn-default" v-on:click="addPhone" name="button">+</button>
+        <button type="button" class="btn btn-default" v-on:click="removePhone" name="button">-</button>
     </div>
+    <button type="submit" class="btn btn-default">Submit</button>
 {!! Form::close() !!}
