@@ -17,7 +17,7 @@
     <div id="company-telephone-div" class="form-group">
         <label for="telphone">Telephone</label>
         <template v-for="i in n">
-            <input class="form-control" type="text" id="telephone" name="telephone[]">
+            <input class="form-control" type="text" id="telephone" name="telephones[]">
         </template>
         <button type="button" class="btn btn-default" v-on:click="addPhone" name="button">+</button>
         <button type="button" class="btn btn-default" v-on:click="removePhone" name="button">-</button>
