@@ -13,12 +13,13 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property \Carbon\Carbon $updated_at
  *
  * @property string $name
+ * @property string $type
  * @property string $address
  * @property array $phones
  *
  */
 
-class Vhip extends Model
+class Company extends Model
 {
-    protected $fillable = ['name', 'address', 'phones'];
+    protected $fillable = ['name', 'type', 'address', 'phones'];
 }
