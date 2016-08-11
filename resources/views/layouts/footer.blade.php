@@ -16,11 +16,8 @@
 <!-- Vue.js Thanks to Pooya -->
 {!! Html::script('js/vue.min.js') !!}
 
-<!-- 18.20 specific javascripts -->
-<!-- Pages specific javascripts -->
-@hasSection('js')
-<script src=@yield('js')></script>
-@endif
+<!-- FMS specific javascripts -->
+{!! Html::script('js/all.js') !!}
 
 </body>
 </html>
