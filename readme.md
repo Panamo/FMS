@@ -2,6 +2,16 @@
 Fish Management System ...
 ## Introduction
 Fish management system is a system for managing fishing corporation.
+## How...
+### MongoDB
+Read the mongoDB manual for laravel from [here](https://github.com/jenssegers/laravel-mongodb)
+after installation, use following commands
+for creating mongo db and user for our TMail
+application.
+```javascript
+use fms
+db.createUser({user: "fms", pwd: "1234", roles: [{role: "userAdmin", db: "fms"}]})
+```
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
