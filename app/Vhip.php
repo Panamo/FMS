@@ -1,6 +1,6 @@
 <?php
 
-namespace FSM;
+namespace FMS;
 
 use Jenssegers\Mongodb\Eloquent\Model as Model;
 
