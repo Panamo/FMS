@@ -5,7 +5,7 @@ namespace FMS\Http\Controllers;
 use Illuminate\Http\Request;
 
 use FMS\Http\Requests;
-use FMS\Company;
+use FMS\Company as Company;
 
 class CompanyController extends Controller
 {
@@ -41,14 +41,14 @@ class CompanyController extends Controller
             'name' => 'required|max:255',
             'type' => 'required|in:clone,register',
             'address' => 'required',
-            'telephone' => 'required|array',
+            'telephones' => 'required|array',
         ]);
 
         $company = Company::create([
             'name' => $request['name'],
             'type' => $request['type'],
             'address' => $request['address'],
-            'telephone' => $request['telephone']
+            'phones' => $request['telephones']
         ]);
     }
 
