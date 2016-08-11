@@ -16,6 +16,11 @@ new Vue({
   methods: {
     addPhone: function (event) {
       this.n++
+    },
+    removePhone: function (event) {
+      if (this.n > 1) {
+        this.n--
+      }
     }
   }
 })
