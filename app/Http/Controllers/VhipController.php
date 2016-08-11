@@ -5,6 +5,8 @@ namespace FMS\Http\Controllers;
 use Illuminate\Http\Request;
 
 use FMS\Http\Requests;
+use FMS\Vhip as Vhip;
+use FMS\Company as Company;
 
 class VhipController extends Controller
 {
@@ -25,7 +27,7 @@ class VhipController extends Controller
      */
     public function create()
     {
-        return view("vhip.create");
+        return view("vhip.create")->with("companies", Company::all());
     }
 
     /**

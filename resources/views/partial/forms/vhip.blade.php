@@ -23,7 +23,9 @@
     <div class="form-group">
         <label for="sub_companies">Sub Companies</label>
         <select name="sub_companies" class="form-control">
-            <option></option>
+            @foreach($companies as $company)
+            <option value="{{$company->_id}}">{{$company->name}}</option>
+            @endforeach
         </select>
     </div>
     <div class="form-group">
