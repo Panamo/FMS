@@ -66,8 +66,6 @@ class VhipController extends Controller
             'tracking_code' => $request['tracking_code'],
             'companies' => $companies
         ]);
-
-        return $vhip;
     }
 
     /**
