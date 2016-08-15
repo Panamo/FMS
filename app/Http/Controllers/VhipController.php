@@ -38,7 +38,34 @@ class VhipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'letter_code' => 'required|string',
+            'submit_date' => 'required|date',
+            'expire_date' => 'required|date',
+            'total_amount' => 'required|numeric',
+            'tracking_code' => 'required|string',
+            'sub_companies' => 'required|array',
+            'amounts' => 'required|array'
+        ]);
+
+        $companies = [];
+        for ($i = 0; $i < sizeof($request['sub_companies']); $i++) {
+            array_push(
+                $companies,
+                ['name' => $request['sub_companies'][$i], 'amount' => $request['amounts'][$i]]
+            );
+        }
+
+        $vhip = Vhip::create([
+            'letter_code' => $request['letter_code'],
+            'submit_date' => $request['submit_date'],
+            'expire_date' => $request['expire_date'],
+            'total_amount' => $request['total_amount'],
+            'tracking_code' => $request['tracking_code'],
+            'companies' => $companies
+        ]);
+
+        return $vhip;
     }
 
     /**
