@@ -1,7 +1,7 @@
 #!/bin/bash
 # In The Name Of God
 # ========================================
-# [] File Name : install.sh
+# [] File Name : deploy.sh
 #
 # [] Creation Date : 15-08-2016
 #
