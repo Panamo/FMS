@@ -17,7 +17,7 @@ class VhipController extends Controller
      */
     public function index()
     {
-        //
+        return view("vhip.index")->with("vhips", Vhip::all());
     }
 
     /**
@@ -52,7 +52,9 @@ class VhipController extends Controller
         for ($i = 0; $i < sizeof($request['sub_companies']); $i++) {
             array_push(
                 $companies,
-                ['name' => $request['sub_companies'][$i], 'amount' => $request['amounts'][$i]]
+                ['id' => $request['sub_companies'][$i],
+                'amount' => $request['amounts'][$i],
+                'name' => Company::find($request['sub_companies'][$i])]
             );
         }
 
