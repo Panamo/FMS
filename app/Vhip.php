@@ -22,6 +22,6 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
 
 class Vhip extends Model
 {
-    protected $fillable = ['letter_code', 'submit_date', 'expire_date', 'total_amount', 'tracking_code'];
+    protected $fillable = ['letter_code', 'submit_date', 'expire_date', 'total_amount', 'tracking_code', 'companies'];
     protected $dates = ['submit_date', 'expire_date'];
 }
