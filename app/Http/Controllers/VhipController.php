@@ -54,7 +54,7 @@ class VhipController extends Controller
                 $companies,
                 ['id' => $request['sub_companies'][$i],
                 'amount' => $request['amounts'][$i],
-                'name' => Company::find($request['sub_companies'][$i])]
+                'name' => Company::find($request['sub_companies'][$i])['name']]
             );
         }
 
