@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-{!! Form::open(['url' => route('company.update')]) !!}
+{!! Form::open(['url' => route('company.update', $company)]) !!}
     {{ Form::hidden('_method', 'PUT') }}
     <div class="form-group">
         <label for="name">Name</label>
