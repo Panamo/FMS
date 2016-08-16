@@ -13,6 +13,7 @@ echo "Installing requirements"
 sudo apt-get update
 sudo apt-get install apache2 mongodb curl
 sudo apt-get install php php-curl php-mysql php-mcrypt php-json php-cli php-curl php-mongo php-mbstring phpunit
+sudo apt-get install libapache2-mod-php
 
 # setup composer
 echo "Installing composer"
@@ -30,8 +31,10 @@ if [ ! -e .env ]; then
 else
 	echo "environment was defined previously"
 fi
-#composer install
-#chmod 0777 -R storage
+composer install
+chmod 0777 -R storage
+chmod 0777 bootstrap/cache
+php artisan key:generate
 
 # Apache initiation
 echo "Apache2 initiation"
