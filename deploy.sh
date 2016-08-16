@@ -30,5 +30,8 @@ sudo a2enmod rewrite
 sudo deploy/000-default.conf /etc/apache2/sites-available/
 sudo service apache2 restart
 
+# Database initiation
+mongo < deploy/db.js
+
 echo "Let's try 127.0.0.1/FMS !"
 echo "Panamo contains friends that will friend forever :)"
