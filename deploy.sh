@@ -9,21 +9,29 @@
 # =======================================
 
 # install requirements
-echo "installing requirements"
+echo "Installing requirements"
 sudo apt-get update
 sudo apt-get install apache2 mongodb curl
-sudo apt-get install php php-curl php-mysql php-mcrypt php-json php-cli php-curl php-mongo php-mbstring
+sudo apt-get install php php-curl php-mysql php-mcrypt php-json php-cli php-curl php-mongo php-mbstring phpunit
 
 # setup composer
-echo "installing composer"
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-sudo chown -R $USER:$USER $HOME/.composer
+echo "Installing composer"
+if [ ! -e /usr/local/bin/composer ]; then
+	curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+	sudo chown -R $USER:$USER $HOME/.composer
+else
+	echo "composer was installed previously."
+fi
 
 # FMS initiation
 echo "FMS initiation"
-cp .env.example .env
-composer install
-chmod 0777 -R storage
+if [ ! -e .env ]; then
+	cp .env.example .env
+else
+	echo "environment was defined previously"
+fi
+#composer install
+#chmod 0777 -R storage
 
 # Apache initiation
 echo "Apache2 initiation"
