@@ -20,17 +20,25 @@
         <input class="form-control" type="text" id="tracking_code" name="tracking_code" placeholder="Tracking Code">
     </div>
     <hr>
-    <div class="form-group">
-        <label for="sub_companies">Sub Companies</label>
-        <select name="sub_companies" class="form-control">
-            @foreach($companies as $company)
-            <option value="{{$company->_id}}">{{$company->name}}</option>
-            @endforeach
-        </select>
+    <div id="vhip-company-div">
+        <div class="form-group">
+            <label for="sub_companies">Sub Companies</label>
+            <template v-for="i in n">
+                <select name="sub_companies[]" class="form-control">
+                    @foreach($companies as $company)
+                    <option value="{{$company->_id}}">{{$company->name}}</option>
+                    @endforeach
+                </select>
+            </template>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <template v-for="i in n">
+                <input type="text" id="amount" class="form-control" name="amounts[]">
+            </template>
+        </div>
+        <button type="button" class="btn btn-default" v-on:click="addCompany">+</button>
+        <button type="button" class="btn btn-default" v-on:click="removeCompany">-</button>
     </div>
-    <div class="form-group">
-        <label for="amount">Amount</label>
-        <input type="text" id="amount" name="amount">
-        <button type="button" name="plus_button">+</button>
-    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
 {!! Form::close() !!}
