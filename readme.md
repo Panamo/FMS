@@ -12,6 +12,14 @@ application.
 use fms
 db.createUser({user: "fms", pwd: "1234", roles: [{role: "userAdmin", db: "fms"}]})
 ```
+## Installation
+For installing this platform on bare ubuntu
+do the following steps:
+
+1. `sudo apt install git`
+2. `sudo git clone https://github.com/panamo/FMS /var/www/html/FMS`
+3. `sudo chown -R $USER:$USER /var/www/html/FMS`
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
