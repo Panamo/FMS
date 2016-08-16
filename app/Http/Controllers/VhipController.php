@@ -66,6 +66,8 @@ class VhipController extends Controller
             'tracking_code' => $request['tracking_code'],
             'companies' => $companies
         ]);
+
+        return redirect()->route('vhip.show', [$vhip]);
     }
 
     /**
@@ -74,9 +76,9 @@ class VhipController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Vhip $vhip)
     {
-        //
+        return view('vhip.show')->with('vhip', $vhip);
     }
 
     /**
