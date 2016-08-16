@@ -5,15 +5,17 @@
             <th>Name</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
         @forelse($companies as $company)
         <tr>
             <td>{{ $company->name }}</td>
             <td><a class="btn btn-default" href="{{route('company.show', $company)}}">More Info</a></td>
+            <td><a class="btn btn-default" href="{{route('company.edit', $company)}}">Edit</a></td>
             <td>
             {{ Form::open(['url' => route('company.destroy', $company)]) }}
                 {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
+                <button type="submit" class="btn btn-warning">Delete</button>
             {{ Form::close() }}
             </td>
         </tr>
