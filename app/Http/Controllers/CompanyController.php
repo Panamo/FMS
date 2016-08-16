@@ -50,6 +50,8 @@ class CompanyController extends Controller
             'address' => $request['address'],
             'phones' => $request['telephones']
         ]);
+
+        return redirect()->route('company.show', [$company]);
     }
 
     /**
@@ -60,7 +62,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        return view('company.show')->with('company', $company);
     }
 
     /**

@@ -10,9 +10,9 @@
 
 # install requirements
 echo "installing requirements"
-sudo apt update
-sudo apt install apache2 mongodb
-sudo apt install php-curl php-mysql php-mcrypt php-json php-cli php-curl php-mongodb php-mbstring
+sudo apt-get update
+sudo apt-get install apache2 mongodb curl
+sudo apt-get install php php-curl php-mysql php-mcrypt php-json php-cli php-curl php-mongo php-mbstring
 
 # setup composer
 echo "installing composer"
@@ -23,11 +23,12 @@ sudo chown -R $USER:$USER $HOME/.composer
 echo "FMS initiation"
 cp .env.example .env
 composer install
+chmod 0777 -R storage
 
 # Apache initiation
 echo "Apache2 initiation"
 sudo a2enmod rewrite
-sudo deploy/000-default.conf /etc/apache2/sites-available/
+sudo cp deploy/000-default.conf /etc/apache2/sites-available/
 sudo service apache2 restart
 
 # Database initiation
