@@ -1,25 +1,32 @@
 @extends('layouts.app')
 @section('content')
+<table class="table table-scriped table-hover">
+    <tr>
+        <th>Letter Code</th>
+        <th>Submit Date</th>
+        <th>Expire Date</th>
+        <th>Total Amount</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
     @forelse($vhips as $vhip)
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{ $vhip->letter_code }}</h3>
-        </div>
-        <div class="panel-body">
-            <h4>Submit Date: {{ $vhip->submit_date }}</h4>
-            <h4>Expire Date: {{ $vhip->expire_date }}</h4>
-            <h4>Total Amount: {{ $vhip->total_amount }}</h4>
-            <hr>
-            <ul>
-            @foreach($vhip->companies as $company)
-                <li><a href="{{route('company.show', ['id' => $company['id']])}}">
-                    {{ $company['name'] }}: {{ $company['amount'] }}
-                </a></li>
-            @endforeach
-            </ul>
-        </div>
-    </div>
+    <tr>
+        <td>{{ $vhip->letter_code }}</td>
+        <td>{{ date('Y/m/d', strtotime($vhip->submit_date)) }}</td>
+        <td>{{ date('Y/m/d', strtotime($vhip->expire_date)) }}</td>
+        <td>{{ $vhip->total_amount }}</td>
+        <td><a class="btn btn-default" href="{{route('vhip.show', $vhip)}}">More Info</a></td>
+        <td><a class="btn btn-default" href="{{route('vhip.show', $vhip)}}">Edit</a></td>
+        <td>
+            {{ Form::open(['url' => route('vhip.destroy', $vhip)]) }}
+                {{ Form::hidden('_method', 'DELETE') }}
+                <button type="submit" class="btn btn-warning">Delete</button>
+            {{ Form::close() }}
+        </td>
+    </tr>
     @empty
-        404 Not Found :D
+    404 Not Found :D
     @endforelse
+    </table>
 @endsection
