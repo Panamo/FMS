@@ -11,17 +11,16 @@
 new Vue({
   el: '#vhip-company-div',
   data: {
-    n: 1
+    n: 0
   },
   methods: {
-    addCompany: function (event) {
+    addCompany: function () {
       this.n++
     },
-    removeCompany: function (event) {
-      if (this.n > 1) {
+    removeCompany: function () {
+      if (this.n > 0) {
         this.n--
       }
     }
   }
 })
-
