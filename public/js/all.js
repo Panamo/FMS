@@ -11,14 +11,14 @@
 new Vue({
   el: '#company-telephone-div',
   data: {
-    n: 1
+    n: 0
   },
   methods: {
     addPhone: function (event) {
       this.n++
     },
     removePhone: function (event) {
-      if (this.n > 1) {
+      if (this.n > 0) {
         this.n--
       }
     }
@@ -39,19 +39,18 @@ new Vue({
 new Vue({
   el: '#vhip-company-div',
   data: {
-    n: 1
+    n: 0
   },
   methods: {
-    addCompany: function (event) {
+    addCompany: function () {
       this.n++
     },
-    removeCompany: function (event) {
-      if (this.n > 1) {
+    removeCompany: function () {
+      if (this.n > 0) {
         this.n--
       }
     }
   }
 })
-
 
 //# sourceMappingURL=all.js.map
