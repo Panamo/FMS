@@ -18,10 +18,6 @@
         <input class="form-control" type="text" id="total_amount" name="total_amount" placeholder="Total Amount">
     </div>
     <div class="form-group">
-        <label for="rem_amount">Reminded Amount</label>
-        <p class="form-control-static" id="rem_amount">@{{value}}</p>
-    </div>
-    <div class="form-group">
         <label for="tracking_code">Tracking Code</label>
         <input class="form-control" type="text" id="tracking_code" name="tracking_code" placeholder="Tracking Code">
     </div>
