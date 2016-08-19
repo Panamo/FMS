@@ -11,7 +11,7 @@
 # install requirements
 echo "Installing requirements"
 sudo apt-get update
-sudo apt-get install apache2 mongodb curl
+sudo apt-get install mongodb curl
 sudo apt-get install php php-curl php-mysql php-mcrypt php-json php-cli php-curl php-mongo php-mbstring phpunit
 sudo apt-get install libapache2-mod-php
 sudo apt-get install unzip

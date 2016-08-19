@@ -16,7 +16,7 @@ db.createUser({user: "fms", pwd: "1234", roles: [{role: "userAdmin", db: "fms"}]
 For installing this platform on bare ubuntu
 do the following steps:
 
-1. `sudo apt install git`
+1. `sudo apt install git apache2`
 2. `sudo git clone https://github.com/panamo/FMS /var/www/html/FMS`
 3. `sudo chown -R $USER:$USER /var/www/html/FMS`
 
