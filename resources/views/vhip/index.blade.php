@@ -17,7 +17,7 @@
         <td>{{ date('Y/m/d', strtotime($vhip->expire_date)) }}</td>
         <td>{{ $vhip->total_amount }}</td>
         <td><a class="btn btn-default" href="{{route('vhip.show', $vhip)}}">More Info</a></td>
-        <td><a class="btn btn-default" href="{{route('vhip.show', $vhip)}}">Edit</a></td>
+        <td><a class="btn btn-default" href="{{route('vhip.edit', $vhip)}}">Edit</a></td>
         <td>
             {{ Form::open(['url' => route('vhip.destroy', $vhip)]) }}
                 {{ Form::hidden('_method', 'DELETE') }}
