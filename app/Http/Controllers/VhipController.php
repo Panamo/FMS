@@ -73,7 +73,7 @@ class VhipController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Vhip  $vhip
      * @return \Illuminate\Http\Response
      */
     public function show(Vhip $vhip)
@@ -89,19 +89,48 @@ class VhipController extends Controller
      */
     public function edit(Vhip $vhip)
     {
-        return view('vhip.edit')->with('vhip', $vhip);
+        return view('vhip.edit')->with('vhip', $vhip)->with('companies', Company::all());
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Vhip  $vhip
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Vhip $vhip)
     {
-        //
+        $this->validate($request, [
+            'letter_code' => 'required|string',
+            'submit_date' => 'required|date',
+            'expire_date' => 'required|date',
+            'total_amount' => 'required|numeric',
+            'tracking_code' => 'required|string',
+            'sub_companies' => 'required|array',
+            'amounts' => 'required|array'
+        ]);
+
+        $companies = [];
+        for ($i = 0; $i < sizeof($request['sub_companies']); $i++) {
+            array_push(
+                $companies,
+                ['id' => $request['sub_companies'][$i],
+                'amount' => $request['amounts'][$i],
+                'name' => Company::find($request['sub_companies'][$i])['name']]
+            );
+        }
+
+        $vhip->update([
+            'letter_code' => $request['letter_code'],
+            'submit_date' => $request['submit_date'],
+            'expire_date' => $request['expire_date'],
+            'total_amount' => $request['total_amount'],
+            'tracking_code' => $request['tracking_code'],
+            'companies' => $companies
+        ]);
+
+        return redirect()->route('vhip.show', [$vhip]);
     }
 
     /**
