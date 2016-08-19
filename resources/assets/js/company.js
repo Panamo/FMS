@@ -11,14 +11,14 @@
 new Vue({
   el: '#company-telephone-div',
   data: {
-    n: 1
+    n: 0
   },
   methods: {
     addPhone: function (event) {
       this.n++
     },
     removePhone: function (event) {
-      if (this.n > 1) {
+      if (this.n > 0) {
         this.n--
       }
     }
