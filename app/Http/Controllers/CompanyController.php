@@ -80,12 +80,26 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Company $company)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'type' => 'required|in:clone,register',
+            'address' => 'required',
+            'telephones' => 'required|array',
+        ]);
+
+        $company->update([
+            'name' => $request['name'],
+            'type' => $request['type'],
+            'address' => $request['address'],
+            'phones' => $request['telephones']
+        ]);
+
+        return redirect()->route('company.show', [$company]);
     }
 
     /**
