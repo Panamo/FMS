@@ -18,6 +18,7 @@
     </div>
     <div id="company-telephone-div" class="form-group">
         <label for="telphone">Telephone</label>
+        <input class="form-control" type="text" id="telephone" name="telephones[]">
         <template v-for="i in n">
             <input class="form-control" type="text" id="telephone" name="telephones[]">
         </template>
