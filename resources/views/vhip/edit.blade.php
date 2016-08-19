@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 {!! Form::open(['url' => route('vhip.update', $vhip)]) !!}
+    {{ Form::hidden('_method', 'PUT') }}
     <div class="form-group">
         <label for="letter_code">Letter Code</label>
         <input class="form-control" type="text" id="letter_code" name="letter_code" value="{{ $vhip->letter_code }}">
