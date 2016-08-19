@@ -7,11 +7,11 @@
     </div>
     <div class="form-group">
         <label for="submit_date">Submit Date</label>
-        <input class="form-control" type="date" id="submit_date" name="submit_date" value="{{ date('Y/m/d', strtotime($vhip->submit_date))  }}">
+        <input class="form-control" type="date" id="submit_date" name="submit_date" value="{{ date('Y-m-d', strtotime($vhip->submit_date))  }}">
     </div>
     <div class="form-group">
         <label for="expire_date">Expire Date</label>
-        <input class="form-control" type="date" id="expire_date" name="expire_date" value="{{ date('Y/m/d', strtotime($vhip->expire_date))  }}">
+        <input class="form-control" type="date" id="expire_date" name="expire_date" value="{{ date('Y-m-d', strtotime($vhip->expire_date))  }}">
     </div>
     <div class="form-group">
         <label for="total_amount">Total Amount</label>
