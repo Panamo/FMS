@@ -19,6 +19,9 @@
     </div>
     <div id="company-telephone-div" class="form-group">
         <label for="telphone">Telephone</label>
+        @foreach($company->phones as $phone)
+        <input class="form-control" type="text" id="telephone" name="telephones[]" value={{ $phone }}>
+        @endforeach
         <template v-for="i in n">
             <input class="form-control" type="text" id="telephone" name="telephones[]">
         </template>
