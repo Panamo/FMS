@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         <label for="total_amount">Total Amount</label>
-        <input class="form-control" type="text" id="total_amount" name="total_amount" placeholder="Total Amount" v-model="value" number>
+        <input class="form-control" type="text" id="total_amount" name="total_amount" placeholder="Total Amount">
     </div>
     <div class="form-group">
         <label for="rem_amount">Reminded Amount</label>
@@ -29,6 +29,11 @@
     <div id="vhip-company-div">
         <div class="form-group">
             <label for="sub_companies">Sub Companies</label>
+            <select name="sub_companies[]" class="form-control">
+                @foreach($companies as $company)
+                <option value="{{$company->_id}}">{{$company->name}}</option>
+                @endforeach
+            </select>
             <template v-for="i in n">
                 <select name="sub_companies[]" class="form-control">
                     @foreach($companies as $company)
@@ -39,6 +44,7 @@
         </div>
         <div class="form-group">
             <label for="amount">Amount</label>
+            <input type="text" id="amount" class="form-control" name="amounts[]" v-model="values">
             <template v-for="i in n">
                 <input type="text" id="amount" class="form-control" name="amounts[]" v-model="values">
             </template>
