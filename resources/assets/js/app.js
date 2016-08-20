@@ -7,4 +7,5 @@
  * | File Name:     app.js
  * +===============================================
  */
-webshim.polyfill('forms')
+webshims.setOptions('forms-ext', {types: 'date'})
+webshim.polyfill('es5 mediaelement forms forms-ext')
