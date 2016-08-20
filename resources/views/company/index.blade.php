@@ -3,6 +3,7 @@
 <table class="table table-striped table-hover">
     <tr>
         <th>Name</th>
+        <th>Type</th>
         <th></th>
         <th></th>
         <th></th>
@@ -10,6 +11,7 @@
     @forelse($companies as $company)
     <tr>
         <td>{{ $company->name }}</td>
+        <td>{{ studly_case($company->type) }}</td>
         <td><a class="btn btn-default" href="{{route('company.show', $company)}}">More Info</a></td>
         <td><a class="btn btn-default" href="{{route('company.edit', $company)}}">Edit</a></td>
         <td>

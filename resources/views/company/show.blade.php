@@ -5,6 +5,8 @@
         <h3 class="panel-title">{{ $company->name }}</h3>
     </div>
     <div class="panel-body">
+        <h5>Type: {{ studly_case($company->type) }}</h5>
+        <hr>
         {{ $company->address }}
         <hr>
         <ul>
