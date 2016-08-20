@@ -16,6 +16,9 @@
 <!-- Vue.js Thanks to Pooya -->
 {!! Html::script('js/vue.min.js') !!}
 
+<!-- Webshim for firefox ! -->
+{!! Html::script('js/webshim/polyfiller.js') !!}
+
 <!-- FMS specific javascripts -->
 {!! Html::script('js/all.js') !!}
 
