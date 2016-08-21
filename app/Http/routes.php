@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::resource('vhip', 'VhipController');
 Route::resource('company', 'CompanyController');
+Route::resource('sell', 'SellController');
