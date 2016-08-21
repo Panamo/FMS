@@ -28,7 +28,7 @@ class SellController extends Controller
      */
     public function create()
     {
-        return view('sell.create').with('companies', Company::all());
+        return view('sell.create')->with('companies', Company::all());
     }
 
     /**
