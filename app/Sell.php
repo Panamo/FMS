@@ -12,11 +12,12 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
+ * @property integer company
  *
  */
 
 class Vhip extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['company'];
     protected $dates = [];
 }

@@ -15,8 +15,9 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property string letter_code
  * @property \Carbon\Carbon submit_date
  * @property \Carbon\Carbon expire_date
- * @property int total_amount
+ * @property integer total_amount
  * @property string tracking_code
+ * @property array companies
  *
  */
 
