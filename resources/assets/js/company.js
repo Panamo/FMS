@@ -14,10 +14,10 @@ new Vue({
     n: 0
   },
   methods: {
-    addPhone: function (event) {
+    addPhone: function () {
       this.n++
     },
-    removePhone: function (event) {
+    removePhone: function () {
       if (this.n > 0) {
         this.n--
       }
