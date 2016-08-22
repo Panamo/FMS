@@ -8,6 +8,7 @@ use FMS\Http\Requests;
 
 use FMS\Company as Company;
 use FMS\Sell as Sell;
+use FMS\Vhip as Vhip;
 
 class SellController extends Controller
 {
@@ -28,7 +29,9 @@ class SellController extends Controller
      */
     public function create()
     {
-        return view('sell.create')->with('companies', Company::all());
+        return view('sell.create')
+            ->with('vhips', Vhip::all())
+            ->with('companies', Company::all());
     }
 
     /**
