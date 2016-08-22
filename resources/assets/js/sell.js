@@ -24,3 +24,20 @@ new Vue({
     }
   }
 })
+
+new Vue({
+  el: '#sell-vhip-div',
+  data: {
+    n: 0
+  },
+  methods: {
+    addVhip: function () {
+      this.n++
+    },
+    removeVhip: function () {
+      if (this.n > 0) {
+        this.n--
+      }
+    }
+  }
+})
