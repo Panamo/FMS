@@ -26,10 +26,10 @@ new Vue({
     n: 0
   },
   methods: {
-    addPhone: function (event) {
+    addPhone: function () {
       this.n++
     },
-    removePhone: function (event) {
+    removePhone: function () {
       if (this.n > 0) {
         this.n--
       }
@@ -58,6 +58,33 @@ new Vue({
       this.n++
     },
     removeCompany: function () {
+      if (this.n > 0) {
+        this.n--
+      }
+    }
+  }
+})
+
+/*
+ * +===============================================
+ * | Author:        Parham Alvani (parham.alvani@gmail.com)
+ * |
+ * | Creation Date: 22-08-2016
+ * |
+ * | File Name:     sell.js
+ * +===============================================
+ */
+
+new Vue({
+  el: '#sell-package-div',
+  data: {
+    n: 0
+  },
+  methods: {
+    addPackage: function () {
+      this.n++
+    },
+    removePackage: function () {
       if (this.n > 0) {
         this.n--
       }
