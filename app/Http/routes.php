@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/search', 'SearchController@search')->name('search');
+
 Route::resource('vhip', 'VhipController');
 Route::resource('company', 'CompanyController');
 Route::resource('sell', 'SellController');
