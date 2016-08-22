@@ -17,16 +17,16 @@
         <template v-for="i in n">
             <input type="text" id="size" name="size[]" class="form-control">
         </template>
-        <label for="amount">Amount</label>
-        <input type="text" id="amount" name="amount[]" class="form-control">
+        <label for="count">Count</label>
+        <input type="text" id="count" name="count[]" class="form-control">
         <template v-for="i in n">
-            <input type="text" id="amount" name="amount[]" class="form-control">
+            <input type="text" id="count" name="count[]" class="form-control">
         </template>
         <button type="button" class="btn btn-default" v-on:click="addPackage">+</button>
         <button type="button" class="btn btn-default" v-on:click="removePackage">-</button>
     </div>
     <hr>
-	<div class="form-group" id="sell-package-div">
+	<div class="form-group" id="sell-vhip-div">
         <h4>VHIPs</h4>
         <label for="vhip">VHIP</label>
         <select id="vhip" name="vhip[]" class="form-control">
@@ -46,8 +46,8 @@
         <template v-for="i in n">
             <input type="text" id="amount" name="amount[]" class="form-control">
         </template>
-        <button type="button" class="btn btn-default" v-on:click="addPackage">+</button>
-        <button type="button" class="btn btn-default" v-on:click="removePackage">-</button>
+        <button type="button" class="btn btn-default" v-on:click="addVhip">+</button>
+        <button type="button" class="btn btn-default" v-on:click="removeVhip">-</button>
     </div>
     <hr>
 	<div class="form-group">
