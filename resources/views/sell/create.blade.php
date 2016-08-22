@@ -1,30 +1,43 @@
 @extends('layouts.app')
 @section('content')
 {!! Form::open(['url' => route('sell.store')]) !!}
-    <div>
+    <div class="form-group">
 		<label for="company">Company</label>
-        <select name="company">
+        <select name="company" class="form-control">
             @foreach($companies as $company)
             <option value={{ $company->_id }}>{{ $company->name }}</option>
             @endforeach
         </select>	
 	</div>
-	<hr>
-	<div>
-		<p> بسته ها </p>
-        <label for="size">اندازه</label><input type="text" id="size" name="size">
-        <label for="amount">تعداد</label><input type="text" id="amount" name="amount"><button type="button" name="plus_button">+</button>
+    <hr>
+	<div class="form-group" id="sell-package-div">
+        <h4>Packages</h4>
+        <label for="size">Size</label>
+        <input type="text" id="size" name="size[]" class="form-control">
+        <template v-for="i in n">
+            <input type="text" id="size" name="size[]" class="form-control">
+        </template>
+        <label for="amount">Number</label>
+        <input type="text" id="amount" name="amount[]" class="form-control">
+        <template v-for="i in n">
+            <input type="text" id="amount" name="amount[]" class="form-control">
+        </template>
+        <button type="button" class="btn btn-default" v-on:click="addPackage">+</button>
+        <button type="button" class="btn btn-default" v-on:click="removePackage">-</button>
     </div>
-	<hr>
-	<div>
-		<label for="vahed_price">قیمت واحد</label><input type="text" id="vahed_price" name="vahedP">
-		<label for="kol_price">قیمت کل</label><input type="text" id="kol_price" name="kolP">
+    <hr>
+	<div class="form-group">
+        <label for="fee">Fee</label>
+        <input type="text" id="fee" name="fee" class="form-control">
+        <label for="total_price">Total Price</label>
+        <input type="text" id="total_price" name="total_price" class="form-control">
 	</div>
-	<hr>
-	<div>
-        <label for="total_mass">وزن کل</label><input type="text" id="total_mass" name="massT">
-        <label for="date">تاریخ</label><input type="date" id="date" name="date">
+	<div class="form-group">
+        <label for="total_weight">Total Weight</label>
+        <input type="text" id="total_weight" name="total_weight" class="form-control">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" class="form-control">
     </div>
-
+    <button type="submit" class="btn btn-default">Submit</button>
 {!! Form::close() !!}
 @endsection
