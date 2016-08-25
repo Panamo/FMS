@@ -19,6 +19,9 @@
 <!-- Webshim for firefox ! -->
 {!! Html::script('js/webshim/polyfiller.js') !!}
 
+<!-- Tablesorter -->
+{!! Html::script('js/jquery.tablesorter.min.js') !!}
+
 <!-- FMS specific javascripts -->
 {!! Html::script('js/all.js') !!}
 
